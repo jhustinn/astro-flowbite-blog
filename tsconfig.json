@@ -1,0 +1,10 @@
+{
+  "extends": "astro/tsconfigs/base",
+  "compilerOptions": {
+    "module": "commonjs",
+    "jsx": "react-jsx",
+    "jsxImportSource": "react",
+    "target": "es6",
+    "lib": ["dom", "es2015", "dom.iterable"]
+  }
+}
