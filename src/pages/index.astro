@@ -1,5 +1,7 @@
 ---
-const content = await fetch("http://localhost:8080/cms/API_content").then((response) => {
+const url = "http://api.jhustynn.my.id/";
+
+const content = await fetch(url + "API_content").then((response) => {
   return response.json();
 });
 

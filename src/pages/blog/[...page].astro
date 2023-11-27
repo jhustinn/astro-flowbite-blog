@@ -7,7 +7,7 @@ import Hero from "../../components/Hero.astro";
 import AlertModal from "../../components/AlertModal.astro";
 import { Fragment } from "astro/jsx-runtime";
 
-const url = "http://localhost:8080/cms/";
+const url = "https://api.jhustynn.my.id/";
 
 const category = await fetch(url + "API_category").then((response) => {
   return response.json();
@@ -18,7 +18,7 @@ const content = await fetch(url + "API_content").then((response) => {
 });
 
 export async function getStaticPaths({ paginate }) {
-  const url = "http://localhost:8080/cms/";
+  const url = "http://api.jhustynn.my.id";
   const content = await fetch(url + "API_content").then((response) => {
     return response.json();
   });

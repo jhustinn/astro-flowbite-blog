@@ -3,7 +3,7 @@
 import Layout from "../../Layout/Layout.astro";
 
 // My Url
-const url = "http://localhost:8080/cms/";
+const url = "https://api.jhustynn.my.id";
 
 // Fetch
 const content = await fetch(url + "API_content").then((response) => {
@@ -50,7 +50,7 @@ const selectedContent = content.find((item) => item.slug === slug);
 
 // Dynamic Paths
 export async function getStaticPaths() {
-  const url = "http://localhost:8080/cms/";
+  const url = "https://api.jhustynn.my.id";
   const content = await fetch(url + "API_content").then((response) => {
     return response.json();
   });
