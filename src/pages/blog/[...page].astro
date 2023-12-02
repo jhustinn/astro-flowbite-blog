@@ -5,7 +5,7 @@ import Layout from "../../Layout/Layout.astro";
 import Pagination from "../../components/Pagination.astro";
 import Hero from "../../components/Hero.astro";
 import AlertModal from "../../components/AlertModal.astro";
-import { Fragment } from "astro/jsx-runtime";
+// import { Fragment } from "astro/jsx-runtime";
 
 const url = "https://api.jhustynn.my.id/";
 
@@ -13,21 +13,22 @@ const category = await fetch(url + "API_category").then((response) => {
   return response.json();
 });
 
-const content = await fetch(url + "API_content").then((response) => {
-  return response.json();
-});
+// const content = await fetch(url + "API_content").then((response) => {
+//   return response.json();
+// });
 
 export async function getStaticPaths({ paginate }) {
-  const url = "http://api.jhustynn.my.id";
+  const url = "https://api.jhustynn.my.id/";
   const content = await fetch(url + "API_content").then((response) => {
     return response.json();
   });
   return paginate(content, {
-    pageSize: 4,
+    pageSize: 2,
   });
 }
 
 const { page } = Astro.props;
+console.log(page);
 
 const title = "My Blog";
 ---
