@@ -4,11 +4,8 @@ import react from "@astrojs/react";
 
 import netlify from "@astrojs/netlify/functions";
 
-// https://astro.build/config
 export default defineConfig({
   integrations: [tailwind(), react()],
+  adapter: netlify(),
   output: "server",
-  adapter: netlify({
-    edgeMiddleware: true,
-  }),
 });
