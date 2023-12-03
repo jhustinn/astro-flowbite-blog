@@ -3,7 +3,7 @@
 import Layout from "../../Layout/Layout.astro";
 
 // My Url
-const url = "https://api.jhustynn.my.id";
+const url = "https://api.jhustynn.my.id/";
 
 // Fetch
 const content = await fetch(url + "API_content").then((response) => {
@@ -15,42 +15,13 @@ const user = await fetch(url + "API_user").then((response) => {
 });
 
 // My Function
-// Codificamos los caracteres: &, <, >, ", '
-// function encodeHtml(str) {
-//   var map = {
-//     "&": "&amp;",
-//     "<": "&lt;",
-//     ">": "&gt;",
-//     '"': "&quot;",
-//     "'": "&#039;",
-//   };
-
-//   return str.replace(/[&<>"']/g, function (m) {
-//     return map[m];
-//   });
-// }
-
-// // Decodificamos los caracteres: &amp; &lt; &gt; &quot; &#039;
-// function decodeHtml(str) {
-//   var map = {
-//     "&amp;": "&",
-//     "&lt;": "<",
-//     "&gt;": ">",
-//     "&quot;": '"',
-//     "&#039;": "'",
-//   };
-
-//   return str.replace(/&amp;|&lt;|&gt;|&quot;|&#039;/g, function (m) {
-//     return map[m];
-//   });
-// }
 
 const { slug } = Astro.params;
 const selectedContent = content.find((item) => item.slug === slug);
 
 // Dynamic Paths
 export async function getStaticPaths() {
-  const url = "https://api.jhustynn.my.id";
+  const url = "https://api.jhustynn.my.id/";
   const content = await fetch(url + "API_content").then((response) => {
     return response.json();
   });
